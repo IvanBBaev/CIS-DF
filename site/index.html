@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIS-DF Practice Exam</title>
+  <meta name="description" content="Interactive ServiceNow CIS-DF practice exam — 192 questions." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2362d84e'/><text x='50' y='70' font-size='58' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23041209'>?</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" id="homeBrand" title="Home">
+      <span class="logo">?</span>
+      <span>CIS-DF Practice <small>· ServiceNow</small></span>
+    </div>
+    <div class="spacer"></div>
+    <button type="button" class="icon-btn" id="themeBtn" title="Toggle theme">🌙 <span>Theme</span></button>
+  </header>
+
+  <main class="wrap">
+    <!-- ========== START SCREEN ========== -->
+    <section id="screen-start" class="card hero">
+      <h1>CIS-DF Practice Exam</h1>
+      <p class="sub">Certified Implementation Specialist — Discovery &amp; Service Mapping. Interactive practice with <strong id="qCount">192</strong> real-style questions.</p>
+
+      <div class="stat-row">
+        <div class="stat"><div class="n" id="statTotal">–</div><div class="l">Questions</div></div>
+        <div class="stat"><div class="n" id="statBest">–</div><div class="l">Best score</div></div>
+        <div class="stat"><div class="n" id="statAttempts">0</div><div class="l">Attempts</div></div>
+        <div class="stat"><div class="n" id="statResume">–</div><div class="l">In progress</div></div>
+      </div>
+
+      <div class="field">
+        <label class="title">Mode</label>
+        <div class="seg" id="modeSeg">
+          <button type="button" data-mode="practice" aria-pressed="true">📚 Practice (instant feedback)</button>
+          <button type="button" data-mode="exam" aria-pressed="false">📝 Exam (score at end)</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="title">Number of questions</label>
+        <div class="seg" id="countSeg">
+          <button type="button" data-count="20" aria-pressed="false">20</button>
+          <button type="button" data-count="50" aria-pressed="false">50</button>
+          <button type="button" data-count="60" aria-pressed="false">60</button>
+          <button type="button" data-count="75" aria-pressed="false">75</button>
+          <button type="button" data-count="100" aria-pressed="false">100</button>
+          <button type="button" data-count="all" aria-pressed="true">All</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="title">Include question types</label>
+        <div class="check-row"><input type="checkbox" id="incSingle" checked /><label for="incSingle">Single-answer</label></div>
+        <div class="check-row"><input type="checkbox" id="incMulti" checked /><label for="incMulti">Multi-answer (choose two/three)</label></div>
+        <div class="check-row"><input type="checkbox" id="incDrag" checked /><label for="incDrag">Drag &amp; drop (interactive, self-checked)</label></div>
+      </div>
+
+      <div class="field">
+        <label class="title">Options</label>
+        <div class="check-row"><input type="checkbox" id="shuffleQ" checked /><label for="shuffleQ">Shuffle question order</label></div>
+        <div class="check-row"><input type="checkbox" id="shuffleO" checked /><label for="shuffleO">Shuffle answer options</label></div>
+      </div>
+
+      <button type="button" class="btn-primary" id="startBtn">Start ▶</button>
+      <div id="resumeRow" class="row-actions hidden">
+        <button type="button" class="btn-ghost" id="resumeBtn" style="flex:1">↩ Resume previous session</button>
+      </div>
+      <p class="kbd-hint">Shortcuts in quiz: <span class="kbd">A–H</span> select · <span class="kbd">→</span>/<span class="kbd">Enter</span> next · <span class="kbd">←</span> back · <span class="kbd">F</span> flag</p>
+    </section>
+
+    <!-- ========== QUIZ SCREEN ========== -->
+    <section id="screen-quiz" class="hidden">
+      <div class="quiz-head">
+        <div class="progress-wrap">
+          <div class="progress-meta"><span id="progLabel">Question 1</span><span id="answeredLabel">0 answered</span></div>
+          <div class="bar"><i id="progBar" style="width:0%"></i></div>
+        </div>
+        <div class="timer" id="timer">00:00</div>
+      </div>
+
+      <div class="card qcard">
+        <div class="badges" id="qBadges"></div>
+        <p class="qtext" id="qText"></p>
+        <div id="dragNote" class="drag-note hidden"></div>
+        <div id="dragImgs"></div>
+        <div class="options" id="qOptions"></div>
+        <div id="feedback" class="feedback hidden"></div>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn-ghost" id="prevBtn">← Prev</button>
+        <button type="button" class="btn-ghost flag" id="flagBtn" aria-pressed="false">⚑ Flag</button>
+        <div class="spacer"></div>
+        <button type="button" class="btn-ghost" id="gridToggle">▦ Overview</button>
+        <button type="button" class="btn-primary" id="nextBtn" style="width:auto">Next →</button>
+      </div>
+
+      <div class="card gridpanel hidden" id="gridPanel">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+          <strong>Question overview</strong>
+          <button type="button" class="btn-primary" id="finishBtn" style="width:auto">Finish &amp; score ✓</button>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--accent-soft);border-color:var(--accent-dim)"></i> Answered</span>
+          <span><i class="dot" style="box-shadow:inset 0 0 0 2px var(--amber)"></i> Flagged</span>
+          <span><i class="dot" style="outline:2px solid var(--text);outline-offset:-2px"></i> Current</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESULTS SCREEN ========== -->
+    <section id="screen-results" class="hidden">
+      <div class="card">
+        <div class="score-ring">
+          <div class="ring" id="ring"><div class="inner"><div><div class="pct" id="scorePct">0%</div><div class="pl">Score</div></div></div></div>
+          <div class="result-stats">
+            <div class="verdict" id="verdict"></div>
+            <div style="width:100%"></div>
+            <div class="stat"><div class="n tag-ok" id="rCorrect">0</div><div class="l">Correct</div></div>
+            <div class="stat"><div class="n tag-no" id="rWrong">0</div><div class="l">Wrong</div></div>
+            <div class="stat"><div class="n" id="rSkipped">0</div><div class="l">Skipped</div></div>
+            <div class="stat"><div class="n" id="rTime">0:00</div><div class="l">Time</div></div>
+          </div>
+        </div>
+        <div class="row-actions">
+          <button type="button" class="btn-primary" id="retryWrongBtn">↻ Retry wrong only</button>
+          <button type="button" class="btn-ghost" id="reviewBtn" style="flex:1">🔍 Review answers</button>
+          <button type="button" class="btn-ghost" id="newBtn" style="flex:1">＋ New session</button>
+        </div>
+      </div>
+
+      <div id="reviewList"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

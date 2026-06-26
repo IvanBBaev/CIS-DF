@@ -1,0 +1,130 @@
+{
+  "2": {
+    "items": ["Dynamic CI Group", "Service Mapping (Connection Suggestion)", "Service Mapping (Top-down)", "Tag-Based"],
+    "targets": [
+      "Recommended for mission-critical application services that require a precise approach using patterns",
+      "Best fit to map cloud-native, container-based, or virtual machine environments",
+      "Ideal for custom-built applications and leverages application fingerprinting to generate service maps in a timely manner",
+      "Ideal for small application services that can be easily grouped using filters and CMDB queries"
+    ],
+    "answer": ["Service Mapping (Top-down)", "Tag-Based", "Service Mapping (Connection Suggestion)", "Dynamic CI Group"]
+  },
+  "25": {
+    "items": ["Organization-built solution using transform maps", "Automated agent-based solution running patterns", "Automated agentless solution running patterns", "Third-party integrations from other vendors", "Pre-built store integration solutions that require minimal customization"],
+    "targets": ["Agent Client Collector", "Import Sets", "Service Graph Connector", "ServiceNow Discovery"],
+    "answer": ["Automated agent-based solution running patterns", "Organization-built solution using transform maps", "Third-party integrations from other vendors", "Automated agentless solution running patterns"]
+  },
+  "30": {
+    "items": ["Audits", "Duplicate CIs", "Orphan CIs", "Recommended fields", "Required fields", "Stale CIs"],
+    "targets": [
+      "Use these to compare actual values with expected values",
+      "Use of these should be minimized",
+      "Certain attribute values are not set, or relationships are missing",
+      "Preferable for them to be populated, as they could be useful in troubleshooting issues",
+      "Have not been updated and may be outdated",
+      "Detected during identification and reconciliation and have associated base system remediation tools"
+    ],
+    "answer": ["Audits", "Duplicate CIs", "Required fields", "Recommended fields", "Stale CIs", "Orphan CIs"]
+  },
+  "46": {
+    "items": ["CI Analyst", "CMDB Process Owner", "Configuration Manager/CMDB Admin", "Service or Product Owner"],
+    "targets": [
+      "Has read-only access to CMDB data and to basic user interface such as CMDB reports and dashboards",
+      "Accountable for managing all elements that make up a portfolio throughout their entire lifecycle",
+      "Manages assigned CI tables and keeps records updated and resolves tasks related to CMDB records",
+      "Obtains highest level role for CMDB privileges"
+    ],
+    "answer": ["CMDB Process Owner", "Service or Product Owner", "CI Analyst", "Configuration Manager/CMDB Admin"]
+  },
+  "47": {
+    "items": ["Certification Tasks", "CMDB Health Dashboard Correctness Scorecard", "De-Duplication Tasks", "De-Duplication Templates", "Duplicate CI Remediator"],
+    "targets": [
+      "Can be assigned to groups for resolving duplicate CIs",
+      "Offers insight into duplicate CIs within the CMDB",
+      "Offers a solution to resolve de-duplication tasks in bulk",
+      "Provides a wizard to resolve de-duplication tasks individually"
+    ],
+    "answer": ["De-Duplication Tasks", "CMDB Health Dashboard Correctness Scorecard", "De-Duplication Templates", "Duplicate CI Remediator"]
+  },
+  "51": {
+    "items": ["Discovery", "Hardware Asset Management", "Risk Management", "Service Portfolio Management"],
+    "targets": [
+      "Delivers asset actions and events for the management and maintenance of assets during incidents",
+      "Supplies critical IT and financial risk data, enabling the team to assess the broader impact of incidents on business operations",
+      "Offers detailed operational-level data on hardware and application to improve incident resolution",
+      "Provides life cycle information about services, helping to align incidents with the status and history of services"
+    ],
+    "answer": ["Hardware Asset Management", "Risk Management", "Discovery", "Service Portfolio Management"]
+  },
+  "63": {
+    "items": ["life_cycle_stage_status", "life_cycle_object", "life_cycle_mapping", "life_cycle_stage"],
+    "targets": [
+      "This table is pre-populated with mappings for legacy status value based on its table, to the best-fit CSDM life-cycle value pair.",
+      "This is a record attribute that reflects a meta-level state of the record life cycle.",
+      "This is a record attribute that reflects a sub-level state of the record life cycle.",
+      "This table uses the type of CI (hardware, document, logical, etc.) determine which sub-level life cycle state values are available."
+    ],
+    "answer": ["life_cycle_mapping", "life_cycle_stage", "life_cycle_stage_status", "life_cycle_object"]
+  },
+  "74": {
+    "items": ["Application Service", "Business Application", "Business Process", "Business Service"],
+    "targets": ["Design and Planning domain", "Foundation domain", "Service Delivery domain", "Sell / Consume domain"],
+    "answer": ["Business Application", "Business Process", "Application Service", "Business Service"]
+  },
+  "102": {
+    "items": ["Agent Client Collector (ACC)", "ServiceNow Discovery", "Service Graph Connectors", "Service Mapping"],
+    "targets": [
+      "Automatically identifies devices and applications in the network, populating the CMDB with accurate and up-to-date information",
+      "Facilitates integration between ServiceNow and external systems to import and synchronize data",
+      "Complete topology of the services and shows how they are supported by underlying infrastructure and applications",
+      "Provides real-time visibility into endpoint configurations, populating the CMDB with accurate and up-to-date information"
+    ],
+    "answer": ["ServiceNow Discovery", "Service Graph Connectors", "Service Mapping", "Agent Client Collector (ACC)"]
+  },
+  "126": {
+    "items": ["Audit", "Duplicate", "Orphan", "Recommended", "Required", "Stale"],
+    "targets": [
+      "CMDB records that represent the same physical or logical asset multiple times",
+      "Fields necessary to create or update a CI record in the CMDB",
+      "CMDB records that no longer maintain their logical or physical relationships with other CIs",
+      "CMDB records that are no longer actively updated, but remain stored in the database",
+      "Fields that support the accuracy, completeness, and usability of CI records in the CMDB",
+      "Actual values of specified fields are compared to the expected values defined in a template"
+    ],
+    "answer": ["Duplicate", "Required", "Orphan", "Stale", "Recommended", "Audit"]
+  },
+  "127": {
+    "items": ["Audit", "Stability", "Required", "Certify", "Suggested", "Orphan"],
+    "targets": ["Completeness", "Compliance", "Correctness"],
+    "answer": ["Required", "Certify", "Audit"]
+  },
+  "174": {
+    "items": ["Application Service", "Business Service", "Technology Management Service (Technical Service)"],
+    "targets": [
+      "Logical representation of a deploy system or application stack.",
+      "Published to Service Owners and underpins one or more business or application Services.",
+      "Published to Business Users and underpins one or more business capabilities."
+    ],
+    "answer": ["Application Service", "Technology Management Service (Technical Service)", "Business Service"]
+  },
+  "175": {
+    "items": ["Design Domain", "Foundation Domain", "Portfolio Domain", "Technical Domain"],
+    "targets": [
+      "Service Owner(s), Platform Owner",
+      "Technology Service Owner(s), Application Service Owner(s), Platform Owner",
+      "Enterprise Architect(s), Platform Owner",
+      "Enterprise Architect(s), Data Steward(s), Process Owner(s), Platform Owner"
+    ],
+    "answer": ["Portfolio Domain", "Technical Domain", "Design Domain", "Foundation Domain"]
+  },
+  "176": {
+    "items": ["Foundation", "Design and Planning", "Service Consumption", "Service Delivery"],
+    "targets": [
+      "Understand CIs related to business application and related capabilities to identify redundancies, monitor costs and make better investment decisions around roadmap",
+      "Understand technical services, technical service offerings, service support and all relationships to underlying technology CIs",
+      "Understand business services and ownership, cost, scope of what is offered to the business/consumer and request access to the business services",
+      "Use the base system tables when implementing the CSDM to derive the highest value from ServiceNow products and the Now Platform"
+    ],
+    "answer": ["Design and Planning", "Service Delivery", "Service Consumption", "Foundation"]
+  }
+}
