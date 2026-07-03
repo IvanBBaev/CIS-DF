@@ -1,5 +1,10 @@
 # CIS-DF Practice Exam — interactive web app
 
+<!-- badges:start -->
+| [![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE) | [![CI](https://img.shields.io/github/actions/workflow/status/IvanBBaev/CIS-DF/deploy-pages.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=CI)](https://github.com/IvanBBaev/CIS-DF/actions/workflows/deploy-pages.yml) | [![last commit](https://img.shields.io/github/last-commit/IvanBBaev/CIS-DF?style=flat-square&logo=git&logoColor=white&label=last-commit)](https://github.com/IvanBBaev/CIS-DF/commits/main) | [![demo](https://img.shields.io/badge/demo-GitHub%20Pages-222?style=flat-square&logo=githubpages&logoColor=white)](https://ivanbbaev.github.io/CIS-DF/) | [![built with JavaScript](https://img.shields.io/badge/built%20with-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript) |
+| :--: | :--: | :--: | :--: | :--: |
+<!-- badges:end -->
+
 A dynamic, browser-based quiz built from the `cis-df.pdf` SecExams question dump
 (ServiceNow **Certified Implementation Specialist — Discovery & Service Mapping**).
 
